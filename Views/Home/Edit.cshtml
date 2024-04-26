@@ -1,0 +1,61 @@
+﻿@model EmployeeUpdate;
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+
+<form method="post" action="Edit" style="width:600px; margin:auto; margin-top:100px;">
+    <h2>Update An Employee</h2>
+    <div class="d-none">
+        <label class="form-label" asp-for="id"></label>
+        <input class="form-control" asp-for="id" />
+        <span class="text-danger fs-6" asp-validation-for="id"></span>
+    </div>
+    <div>
+        <label class="form-label" asp-for="name"></label>
+        <input class="form-control" asp-for="name" />
+        <span class="text-danger fs-6" asp-validation-for="name"></span>
+    </div>
+    <br />
+    <div>
+    <label class="form-label" asp-for="role"></label>
+        <select class="form-control" asp-for="role">
+            <option selected disabled>Select Job Role</option>
+            <option value = "0">Manager</option>
+            <option value = "1">Developer</option>
+            <option value = "2">Designer</option>
+        </select>
+        <span class="text-danger fs-6" asp-validation-for="role"></span>
+    </div>
+    <br />
+    <div class="d-flex">
+        <label class="form-label" asp-for="gender">Gender</label>
+        <label class="ms-3">
+            <input class="form-check-input" type="radio" name="gender" asp-for="gender" value = "0" checked> Male
+        </label>
+        <label class="ms-3">
+            <input class="form-check-input" type="radio" name="gender" asp-for="gender" value = "1"> Female
+        </label>
+    </div>
+    <br />
+    <div>
+        <input type="checkbox" class="form-check-input me-2" asp-for="is1stAppointment" />
+        <label class="form-check-label mb-2" asp-for="is1stAppointment"></label>
+    </div>
+    <br />
+    <div>
+        <label class="form-label">Start Date</label>
+        <input disabled type="date" min="@DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")" class="form-control" value="@ViewBag.Date" />
+    </div>
+    <br />
+    <div>
+        <label class="form-label" asp-for="notes"></label>
+        <textarea class="form-control" asp-for="notes"></textarea>
+    </div>
+    <br />
+    <input class="btn btn-primary" type="submit" value="Update" />
+</form>
+
+@section Scripts
+    {
+    <partial name="_ValidationScriptsPartial"></partial>
+}
