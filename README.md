@@ -6,6 +6,6 @@ The **Simple Employee Management Frontend** is a user-friendly web application d
 
 - **User Authentication**: Secure login and registration functionalities to ensure authorized access.
 - **Employee Management**: View, add, edit, and delete employee records efficiently.
-- **Search and Filter**: Easily search employees by name and filter records based on position or salary range.
+- **Search and Filter**: Easily search employees by name and filter records.
 
 ### was Designed to work with https://github.com/JustOmar21/Simple-Employee-Management-Backend
